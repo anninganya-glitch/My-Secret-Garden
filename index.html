@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏提示 - 早期互联网风格</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f0ff 0%, #c0d8f0 100%);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .top-bar {
+            background: linear-gradient(to bottom, #2c5aa0, #1e3a8a);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+            border-bottom: 2px solid #4a7bc8;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border: 1px solid #a0c0f0;
+            border-radius: 8px;
+            box-shadow: 
+                0 4px 8px rgba(0,0,0,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.9), transparent);
+            border-radius: 8px 8px 0 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c5aa0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #a0c0f0;
+        }
+        
+        .warning {
+            background: linear-gradient(to bottom, #fff8f8, #ffeaea);
+            border: 1px solid #ffaaaa;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            font-weight: bold;
+            color: #b30000;
+        }
+        
+        .reminder-section {
+            background: linear-gradient(to bottom, #f8fbff, #e8f0ff);
+            border: 1px solid #a0c0f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .requirements {
+            background: linear-gradient(to bottom, #f0f8ff, #e0f0ff);
+            border: 1px solid #90b0e0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .start-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 20px;
+            background: linear-gradient(to bottom, #4a7bc8, #2c5aa0);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            border: 1px solid #1e3a8a;
+            box-shadow: 
+                0 4px 0 #1e3a8a,
+                0 6px 8px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+            font-size: 16px;
+        }
+        
+        .start-button:hover {
+            transform: translateY(2px);
+            box-shadow: 
+                0 2px 0 #1e3a8a,
+                0 4px 6px rgba(0,0,0,0.2);
+        }
+        
+        .start-button:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #1e3a8a;
+        }
+        
+        .url-box {
+            background: #f0f8ff;
+            border: 1px solid #a0c0f0;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 20px 0;
+            font-family: Consolas, monospace;
+            text-align: center;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            color: #2c5aa0;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+            border-top: 1px dashed #a0c0f0;
+            padding-top: 10px;
+        }
+        
+        .glossy-effect {
+            height: 5px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
+            margin: 10px 0;
+        }
+        
+        .note {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">公告</div>
+    
+    <div class="container">
+        <h1>游戏提示与免责声明</h1>
+        
+        <div class="warning">
+            <strong>本游戏内容纯属虚构，游戏内人物行动仅为情节服务请勿模仿。心理承受能力低者和未成年人请在监护人陪护下游玩。</strong>
+        </div>
+        
+        <div class="glossy-effect"></div>
+        
+        <div class="reminder-section">
+            <h2>游玩前提醒：</h2>
+            <p>本游戏是一个ARG类型的Meta游戏，在这里你不扮演任何游戏角色，<span class="highlight">你只扮演你自己</span></p>
+            <p>游戏中包含一些需要在现实的社交媒体上寻找的内容，在必要时请离开游戏寻找！</p>
+        </div>
+        
+        <div class="requirements">
+            <h2>游玩要求：</h2>
+            <p>游玩游戏时<span class="highlight">必须佩戴耳机</span>，注意不要佩戴反，保证左右声道的正确。</p>
+            <p>推荐使用电脑游玩，使用Chrome浏览器。</p>
+            <p>为保证使用体验，推荐使用网络加速工具。</p>
+        </div>
+        
+        <div class="glossy-effect"></div>
+        
+        <p class="note">在保证所有提示阅读完后，点此处开始游戏：</p>
+        
+        <div class="url-box">
+            https://anninganya-glitch.github.io/new/
+        </div>
+        
+        <a href="https://anninganya-glitch.github.io/new/" class="start-button">开始游戏</a>
+        
+        <div class="footer">
+            
+        </div>
+    </div>
+</body>
+</html>
